@@ -1,0 +1,26 @@
+{
+  "artifact": "https://armstrongsam25.github.io/runx-demo/delayed-verifier-artifact.html",
+  "contract": "delayed url.live in check_schedules with blocks_acceptance true",
+  "observations": [
+    {
+      "key": "public_url",
+      "value": "https://armstrongsam25.github.io/runx-demo/delayed-verifier-artifact.html",
+      "detail": "Persistent public artifact hosted on GitHub Pages"
+    },
+    {
+      "key": "verifier_type",
+      "value": "url.live",
+      "detail": "The Frantic verifier checks that this URL returns a live response"
+    },
+    {
+      "key": "delayed_check",
+      "value": "not_before with blocks_acceptance true",
+      "detail": "The verifier runner defers the scheduled check until the not_before window passes"
+    },
+    {
+      "key": "timeline",
+      "value": "immediate-pass -> scheduled waiting -> post-window recheck -> final receipt",
+      "detail": "The full sequence: immediate checks pass, delayed recheck is scheduled, fires after window, final receipt reflects result"
+    }
+  ]
+}
