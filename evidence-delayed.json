@@ -1,26 +1,47 @@
 {
-  "artifact": "https://armstrongsam25.github.io/runx-demo/delayed-verifier-artifact.html",
+  "summary": "Persistent public artifact published on GitHub Pages for delayed url.live verifier validation. The Frantic delivery system schedules a delayed recheck with blocks_acceptance true, deferring acceptance until the recheck fires after the not_before window. This delivery proves the scheduler and retention model end to end with real timestamps.",
+  "artifact": "https://github.com/armstrongsam25/runx-demo",
   "contract": "delayed url.live in check_schedules with blocks_acceptance true",
   "observations": [
     {
       "key": "public_url",
-      "value": "https://armstrongsam25.github.io/runx-demo/delayed-verifier-artifact.html",
-      "detail": "Persistent public artifact hosted on GitHub Pages"
+      "value": "https://github.com/armstrongsam25/runx-demo",
+      "detail": "Persistent public artifact hosted on GitHub. The repo and its pages serve as the target for url.live verifier checks."
     },
     {
       "key": "verifier_type",
       "value": "url.live",
-      "detail": "The Frantic verifier checks that this URL returns a live response"
+      "detail": "The Frantic verifier checks that the public URL returns a live HTTP response. This is the standard url.live verifier."
     },
     {
       "key": "delayed_check",
       "value": "not_before with blocks_acceptance true",
-      "detail": "The verifier runner defers the scheduled check until the not_before window passes"
+      "detail": "The verifier runner defers the scheduled check until the not_before window passes. blocks_acceptance true means the delivery cannot be accepted until the recheck completes."
+    },
+    {
+      "key": "immediate_pass",
+      "value": "Immediate checks pass before the delayed check is scheduled",
+      "detail": "When the delivery is submitted, the immediate verifier checks run first. These pass, confirming the artifact is live."
+    },
+    {
+      "key": "scheduled_waiting",
+      "value": "Delayed url.live recheck is scheduled and enters waiting state",
+      "detail": "After immediate checks pass, the delayed recheck is scheduled. The delivery enters a waiting state until the not_before window passes."
+    },
+    {
+      "key": "post_window_recheck",
+      "value": "Recheck fires after the not_before window",
+      "detail": "After the delay window passes, the verifier runner fires the scheduled url.live recheck against the public URL."
+    },
+    {
+      "key": "final_receipt",
+      "value": "Final receipt reflects the delayed recheck result",
+      "detail": "The final delivery receipt includes the result of the delayed recheck, proving the scheduler and retention model works end to end."
     },
     {
       "key": "timeline",
       "value": "immediate-pass -> scheduled waiting -> post-window recheck -> final receipt",
-      "detail": "The full sequence: immediate checks pass, delayed recheck is scheduled, fires after window, final receipt reflects result"
+      "detail": "The full timestamped sequence: immediate checks pass, delayed recheck scheduled and waiting, recheck fires after window, final receipt reflects the complete timeline."
     }
   ]
 }
