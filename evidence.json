@@ -1,0 +1,16 @@
+{
+  "claim_type": "original_public_repo",
+  "public_url": "https://github.com/armstrongsam25/runx-demo",
+  "runx_link_found": true,
+  "summary": "A hands-on walkthrough of runx — governed agent skill workflows with portable SKILL.md files, receipt-sealed execution, and MCP serving. Includes quick start, skill anatomy, receipt format, and links to the Frantic bounty board.",
+  "audience": "developers interested in AI agent tooling, portable skills, and governed execution",
+  "why_allowed": "GitHub is a public developer platform where sharing open-source projects and technical walkthroughs is the intended use. The repo links to runx.ai and github.com/runxhq/runx as required.",
+  "runx_version": "runx-cli 0.6.15",
+  "observations": {
+    "skill_format_documented": true,
+    "receipt_format_documented": true,
+    "mcp_serving_documented": true,
+    "quick_start_included": true,
+    "frantic_board_mentioned": true
+  }
+}
