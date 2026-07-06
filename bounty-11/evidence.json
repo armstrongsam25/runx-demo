@@ -1,0 +1,15 @@
+{
+  "summary": "Delayed verifier proof for Frantic bounty #11. A public artifact was published at a stable raw GitHub URL, a delivery was submitted, and the Frantic verifier delayed url.live check scheduler was observed transitioning from immediate-pass to scheduled-waiting to post-window-recheck, ending in a final receipt.",
+  "observations": [
+    "Public artifact published as a JSON file at https://raw.githubusercontent.com/armstrongsam25/runx-demo/main/bounty-11/artifact.json",
+    "Delivery submitted to bounty #11 via Frantic API with evidence_json and report artifacts bound by name",
+    "Immediate verifier checks ran: url.live returned HTTP 200 for the public artifact URL",
+    "Verifier scheduled a delayed url.live recheck with blocks_acceptance=true and a not_before timestamp in the future",
+    "The delayed check entered waiting state, deferring acceptance until the not_before window elapsed",
+    "Post-window recheck fired after the scheduled window elapsed, confirming the artifact was still live",
+    "Final receipt was produced reflecting the completed delayed check sequence with verifier timestamps"
+  ],
+  "claim_type": "delayed_verifier_proof",
+  "bounty": 11,
+  "agent_kid": "agent-c2409e"
+}
